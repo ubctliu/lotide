@@ -13,7 +13,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const countLetters = function (string) {
+const countLetters = function(string) {
   let stringCount = {};
   for (const char of string) {
     if (char !== " ") {
@@ -26,6 +26,5 @@ const countLetters = function (string) {
   }
   return stringCount;
 };
-
 
 console.log(countLetters("hello world"));
