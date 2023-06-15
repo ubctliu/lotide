@@ -29,3 +29,25 @@ const assertArraysEqual = function(array1, array2) {
     console.log(`🛑 Assertion Failed: ${array1} !== ${array2}`);
   }
 };
+
+const map = function(array, callback) {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item));
+  }
+  return results;
+};
+
+
+// Test Cases
+const words = ["ground", "control", "to", "major", "tom"];
+const results1 = map(words, word => word[0]);
+assertArraysEqual(['g', 'c', 't', 'm', 't'], results1);
+
+const numbers = [5, 7, 9, 11, 15];
+const numberTimesTwo = map(numbers, number => number * 2);
+assertArraysEqual([10, 14, 18, 22, 30], numberTimesTwo);
+
+const customers = ['Bob', 'Joe', 'Billy', 'Jean'];
+const customerIsSarah = map(customers, customer => customer === 'Sarah');
+assertArraysEqual([false, false, false, false], customerIsSarah);
