@@ -1,5 +1,6 @@
 // Function Implementation
 
+// Compares two values and logs a message indicating if they are equal or not
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
@@ -8,8 +9,8 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// allItems: an array of strings that we need to look through
-// itemsToCount: an object specifying what to count
+// Takes in an array of strings that we need to look through and an object specifying what
+// to count and returns the indice of valid items - otherwise returns undefined
 const countOnly = function(allItems, itemsToCount) {
   let seenNames = {};
   for (const name of allItems) {

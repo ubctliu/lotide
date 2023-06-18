@@ -1,5 +1,6 @@
 // Function Implementation
 
+// Compares two values and logs a message indicating if they are equal or not
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
@@ -8,6 +9,8 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+// Takes in an object and a callback function, returning the key of the first key value pair
+// that matches the callback function requirements
 const findKey = function(object, callback) {
   let returnKey;
   for (const key in object) {
