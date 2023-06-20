@@ -1,5 +1,4 @@
 // Function Implementation
-const assertEqual = require('./assertEqual');
 
 // Takes in a non-empty array and returns the first indice - otherwise returns undefined
 const head = function(array) {

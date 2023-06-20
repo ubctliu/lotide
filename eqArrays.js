@@ -1,14 +1,5 @@
 // Function Implementation
 
-// Compares two values and logs a message indicating if they are equal or not
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  }  else {
-    console.log(`🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 // Checks if two arrays are perfectly equal
 const eqArrays = function(array1, array2) {
   // If array lengths are not equal, terminate early and return false
@@ -27,5 +18,4 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-// Test Cases
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+module.exports = eqArrays;

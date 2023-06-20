@@ -1,5 +1,4 @@
 // Function Implementation
-const assertEqual = require('./assertEqual');
 
 // Takes an array and returns an array with every indice except for the head (first index)
 const tail = function(array) {
