@@ -77,6 +77,7 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
+module.exports = assertObjectsEqual;
 
 // Test Cases
 assertObjectsEqual({name: "Bob", job: "Software Engineer"}, {name: "Bob", job: "Software Engineer"});

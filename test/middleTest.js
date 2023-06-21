@@ -3,7 +3,7 @@ const assert = require('chai').assert;
 
 // Test Code
 
-describe('#tail', () => {
+describe('#middle', () => {
   it("returns [] for array of length 2", () => {
     assert.deepEqual(middle([1, 2]), []);
   });
