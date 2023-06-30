@@ -1,6 +1,6 @@
 // Function Implementation
 
-// Checks if two arrays are perfectly equal
+// Takes two arrays and returns true if both arrays have identical values in the same order otherwise returns false
 const eqArrays = function(array1, array2) {
   // If array lengths are not equal, terminate early and return false
   if (array1.length !== array2.length) {

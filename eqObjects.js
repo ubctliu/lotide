@@ -1,6 +1,6 @@
 // Function Implementation
 
-// Checks if two arrays are perfectly equal
+// Takes two arrays and returns true if both arrays have identical values in the same order otherwise returns false
 const eqArrays = function(array1, array2) {
   // If array lengths are not equal, terminate early and return false
   if (array1.length !== array2.length) {
@@ -19,9 +19,13 @@ const eqArrays = function(array1, array2) {
 };
 
 
-// Returns true if both objects have identical keys with identical values.
-// Otherwise returns false
+// Takes two objects and returns true if both objects have identical keys
+// with identical values otherwise returns false
 const eqObjects = function(object1, object2) {
+  return compareKeys(object1, object2);
+};
+
+const compareKeys = function(object1, object2) {
   let object1Keys = Object.keys(object1);
   let object2Keys = Object.keys(object2);
 
@@ -54,7 +58,6 @@ const eqObjects = function(object1, object2) {
         }
     }
   }
-
   return true;
 };
 
