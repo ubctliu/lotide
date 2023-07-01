@@ -16,5 +16,30 @@ describe("#eqObjects", () => {
     const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
     assert.deepEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
   });
-  
+
+  it("return true for the same nested arrays within objects", () => {
+    const studentGroups = { seniors: ['Alex', 'Chris', 'Chandler', 'Jimmy', ['Carter', 'Sam']], juniors: [['Sion', 'Kevin', 'Chance', 'Nick']] };
+    const studentGroups2 = { seniors: ['Alex', 'Chris', 'Chandler', 'Jimmy', ['Carter', 'Sam']], juniors: [['Sion', 'Kevin', 'Chance', 'Nick']] };
+    assert.deepEqual(eqObjects(studentGroups, studentGroups2), true);
+  });
+
+  it("return false for different nested arrays within objects", () => {
+    const studentGroups = { seniors: ['Alex', 'Chris', 'Chandler', 'Jimmy', ['Carter', 'Sam']], juniors: [['Sion', 'Kevin', 'Chance', 'Nick']] };
+    const studentGroups2 = { seniors: ['Alex', 'Chris', 'Chandler', 'Jimmy', ['Carter']], juniors: [['Kevin', 'Chance', 'Nick', 'Malena']] };
+    assert.deepEqual(eqObjects(studentGroups, studentGroups2), false);
+  });
+
+  it("return true for the same nested objects within objects", () => {
+    const studentGroups = { seniors: ['Alex', 'Chris', 'Chandler', 'Jimmy', { seniors: ['Carter', 'Sam'], juniors: ["Jones"]}], juniors: [['Sion', 'Kevin', 'Chance', 'Nick']] };
+    const studentGroups2 = { seniors: ['Alex', 'Chris', 'Chandler', 'Jimmy', { seniors: ['Carter', 'Sam'], juniors: ["Jones"]}], juniors: [['Sion', 'Kevin', 'Chance', 'Nick']] };
+    assert.deepEqual(eqObjects(studentGroups, studentGroups2), true);
+  });
+
+  it("return false for different nested objects within objects", () => {
+    const studentGroups = { seniors: ['Alex', 'Chris', 'Chandler', 'Jimmy', { seniors: ['Carter', 'Sam'], juniors: ["Jones"]}], juniors: [['Sion', 'Kevin', 'Chance', 'Nick']] };
+    const studentGroups2 = { seniors: ['Alex', 'Chris', 'Chandler', 'Jimmy', { seniors: ['Carter', 'Sam'], juniors: ["Christopher"]}], juniors: [['Sion', 'Kevin', 'Chance', 'Nick']] };
+    assert.deepEqual(eqObjects(studentGroups, studentGroups2), false);
+  });
+
+
 });

@@ -1,23 +1,5 @@
+const eqArrays = require("./eqArrays");
 // Function Implementation
-
-// Takes two arrays and returns true if both arrays have identical values in the same order otherwise returns false
-const eqArrays = function(array1, array2) {
-  // If array lengths are not equal, terminate early and return false
-  if (array1.length !== array2.length) {
-    return false;
-  }
-
-  // Loop through and compare the indices directly to check for a perfect match
-  // returns false if mismatch found
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
 
 // Takes two objects and returns true if both objects have identical keys
 // with identical values otherwise returns false
@@ -33,6 +15,11 @@ const compareKeys = function(object1, object2) {
   // if the key value is an array, then return false if arrays are not equal
   // if the key value is an object, then return false if object values are not equal
   for (const key of object1Keys) {
+    if (typeof object1[key] === "object" && typeof object2[key] === "object") {
+      if (!eqObjects(object1[key], object2[key])) {
+        return false;
+      }
+    } else
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       if (!eqArrays(object1[key], object2[key])) {
         return false;
@@ -47,6 +34,11 @@ const compareKeys = function(object1, object2) {
   }
 
   for (const key of object2Keys) {
+    if (typeof object1[key] === "object" && typeof object2[key] === "object") {
+      if (!eqObjects(object1[key], object2[key])) {
+        return false;
+      }
+    } else
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       if (!eqArrays(object1[key], object2[key])) {
         return false;
