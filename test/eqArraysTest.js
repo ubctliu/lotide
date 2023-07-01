@@ -15,4 +15,12 @@ describe("#eqArrays", () => {
   it("return false for an equal array in different positions", () => {
     assert.equal(eqArrays([1, 2, 3], [3, 2, 1]), false);
   });
+
+  it("return true for an nested array in the same positions", () => {
+    assert.equal(eqArrays([1, 2, [1, 2, 3, [1, 2, 3]]], [1, 2, [1, 2, 3, [1, 2, 3]]]), true);
+  });
+
+  it("return false for an nested array in different positions", () => {
+    assert.equal(eqArrays([1, 2, [1, 2, 3, [1, 2, 3]]], [1, 2, [1, 2, 3]]), false);
+  });
 });
