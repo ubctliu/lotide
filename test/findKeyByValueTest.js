@@ -14,6 +14,17 @@ describe("#findKeyByValue", () => {
     assert.equal(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
   });
 
+  it("return drama for the wire if there are two instances of wire", () => {
+    const bestTVShowsByGenre = {
+      sci_fi: "The Expanse",
+      comedy: "Brooklyn Nine-Nine",
+      drama:  "The Wire",
+      horror:  "The Wire"
+    };
+    
+    assert.equal(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+  });
+
   it("return undefined for that 70's show", () => {
     const bestTVShowsByGenre = {
       sci_fi: "The Expanse",

@@ -5,9 +5,7 @@
 const countOnly = function(allItems, itemsToCount) {
   let seenNames = {};
   for (const name of allItems) {
-    // if item exists in the list of items to count
     if (itemsToCount[name]) {
-      // if item hasn't been seen yet, initialize it to 1, otherwise increase count by 1
       if (!seenNames[name]) {
         seenNames[name] = 1;
       } else {
@@ -15,7 +13,6 @@ const countOnly = function(allItems, itemsToCount) {
       }
     }
   }
-  // returns object with all the found results
   return seenNames;
 };
 

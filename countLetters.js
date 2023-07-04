@@ -5,9 +5,7 @@
 const countLetters = function(string) {
   let stringCount = {};
   for (const char of string) {
-    // if character isn't a white space
     if (char !== " ") {
-      // if character hasn't been seen yet, initialize it to 1, otherwise increase count by 1
       if (!stringCount[char]) {
         stringCount[char] = 1;
       } else {
@@ -15,7 +13,6 @@ const countLetters = function(string) {
       }
     }
   }
-  // returns object with all the found results
   return stringCount;
 };
 
